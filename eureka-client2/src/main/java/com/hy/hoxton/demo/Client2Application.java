@@ -1,0 +1,23 @@
+package com.hy.hoxton.demo;
+
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.web.bind.annotation.RestController;
+
+import static org.springframework.boot.WebApplicationType.SERVLET;
+
+/**
+ * @author Created by hy
+ * @date on 2020/7/7 11:47
+ */
+@SpringBootApplication
+@RestController
+@EnableEurekaClient
+public class Client2Application {
+
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(Client2Application.class).web(SERVLET).run(args);
+    }
+
+}
