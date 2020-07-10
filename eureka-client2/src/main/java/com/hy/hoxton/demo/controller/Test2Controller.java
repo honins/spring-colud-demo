@@ -13,7 +13,7 @@ public class Test2Controller {
 
     @GetMapping("/hi")
     public String test(@RequestParam String name) {
-        return "hi"+name+", i am client2";
+        return "hi "+name+", i am client2";
     }
 
 }

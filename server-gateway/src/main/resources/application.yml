@@ -4,6 +4,13 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: service-client
+          uri: lb://EUREKA-CLIENT
+          predicates:
+            - Path=/client/**
+          filters:
+            - StripPrefix=1
+
         - id: limit_route
           uri: http://httpbin.org:80/get
           predicates:
@@ -15,6 +22,11 @@ spring:
                 redis-rate-limiter.replenishRate: 1
                 redis-rate-limiter.burstCapacity: 3
 
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
   application:
     name: gateway-limiter
   redis:
@@ -23,4 +35,9 @@ spring:
     port: 6379
     password: wolwo123
     timeout: 3000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
