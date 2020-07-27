@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * @author Created by hy
  * @date on 2020/7/8 12:58
  */
-@Component
+//@Component
 public class HiServiceHystrixErrorImpl implements HiService {
 
     @Override

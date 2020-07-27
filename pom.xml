@@ -12,6 +12,7 @@
         <module>service-zuul</module>
         <module>config-server</module>
         <module>server-gateway</module>
+        <module>admin-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
