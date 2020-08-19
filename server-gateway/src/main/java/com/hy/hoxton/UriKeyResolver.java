@@ -1,7 +1,6 @@
 package com.hy.hoxton;
 
 import org.springframework.cloud.gateway.filter.ratelimit.KeyResolver;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 

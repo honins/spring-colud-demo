@@ -1,0 +1,21 @@
+server:
+  port: 8090
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: nacos-consumer
+          uri: lb://nacos-consumer
+          predicates:
+            - Path=/consumer/**
+        - id: nacos-provider
+          uri: lb://nacos-provider
+          predicates:
+            - Path=/provider/**
+debug: true
