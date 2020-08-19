@@ -1,5 +1,4 @@
-## spring-colud-hoxton-demo
-### 基于spring cloud的hoxton sr6版本的demo
+## spring-cloud-demo
 ## 包括
 - eureka-client
 - eureka-service
@@ -8,3 +7,4 @@
 - eureka-hystrix
 - eureka-zuul
 - spring cloud gateway
+- alibaba nacos
