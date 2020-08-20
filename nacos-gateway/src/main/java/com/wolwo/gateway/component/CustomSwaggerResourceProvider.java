@@ -1,4 +1,4 @@
-package com.wolwo.gateway.controller.component;
+package com.wolwo.gateway.component;
 
 import lombok.AllArgsConstructor;
 import org.springframework.cloud.gateway.config.GatewayProperties;

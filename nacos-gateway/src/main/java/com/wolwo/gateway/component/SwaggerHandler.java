@@ -1,4 +1,4 @@
-package com.wolwo.gateway.controller;
+package com.wolwo.gateway.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

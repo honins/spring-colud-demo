@@ -5,6 +5,7 @@ spring:
     nacos:
       discovery:
         server-addr: localhost:8848
+        enabled: true
     gateway:
       discovery:
         locator:
@@ -18,4 +19,23 @@ spring:
           uri: lb://nacos-provider
           predicates:
             - Path=/provider/**
-debug: true
+        - id: oauth2-api-route
+          uri: lb://micro-oauth2-api
+          predicates:
+            - Path=/api/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:8091/rsa/publicKey'
+  redis:
+    database: 0
+    port: 6379
+    host: 172.29.1.123
+    password: wolwo123
+
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/auth/oauth/token"
