@@ -11,18 +11,14 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: nacos-consumer
-          uri: lb://nacos-consumer
-          predicates:
-            - Path=/consumer/**
-        - id: nacos-provider
-          uri: lb://nacos-provider
-          predicates:
-            - Path=/provider/**
-        - id: oauth2-api-route
-          uri: lb://micro-oauth2-api
+        - id: oauth2-api
+          uri: lb://oauth2-api
           predicates:
             - Path=/api/**
+        - id: oauth-service
+          uri: lb://oauth-service
+          predicates:
+            - Path=/oauth/**
   security:
     oauth2:
       resourceserver:
@@ -39,3 +35,5 @@ secure:
     urls: #配置白名单路径
       - "/actuator/**"
       - "/auth/oauth/token"
+
+debug: true

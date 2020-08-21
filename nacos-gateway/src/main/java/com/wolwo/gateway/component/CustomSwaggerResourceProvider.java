@@ -27,8 +27,10 @@ public class CustomSwaggerResourceProvider implements SwaggerResourcesProvider {
      */
     private final RouteLocator routeLocator;
     private final GatewayProperties gatewayProperties;
+
     /**
      * 聚合其他服务接口
+     *
      * @return
      */
     @Override
@@ -46,10 +48,10 @@ public class CustomSwaggerResourceProvider implements SwaggerResourcesProvider {
                                         predicateDefinition
                                                 .getArgs()
                                                 .get(NameUtils.GENERATED_NAME_PREFIX + "0")
-                                                .replace("/**",SWAGGER2URL)
-//这里拼接时需要注意
-//网关配置account映射到account-service，要么将网关的配置修改成account-service映射成account-service
-//要么就在这个拼接处解决
+                                                .replace("/**", SWAGGER2URL)
+                                        //这里拼接时需要注意
+                                        //网关配置account映射到account-service，要么将网关的配置修改成account-service映射成account-service
+                                        //要么就在这个拼接处解决
                                 )
                         )));
         return resourceList;

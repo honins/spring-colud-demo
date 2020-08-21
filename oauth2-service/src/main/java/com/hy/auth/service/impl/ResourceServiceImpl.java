@@ -1,5 +1,6 @@
 package com.hy.auth.service.impl;
 
+import cn.hutool.core.collection.CollUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -24,8 +25,8 @@ public class ResourceServiceImpl {
     @PostConstruct
     public void initData() {
         resourceRolesMap = new TreeMap<>();
-        resourceRolesMap.put("/api/hello", new ArrayList<>());
-        resourceRolesMap.put("/api/user/currentUser", new ArrayList<>());
+        resourceRolesMap.put("/api/hello",  CollUtil.toList("ADMIN"));
+        resourceRolesMap.put("/api/user/currentUser", CollUtil.toList("ADMIN", "TEST"));
         redisTemplate.opsForHash().putAll("AUTH:RESOURCE_ROLES_MAP", resourceRolesMap);
     }
 
